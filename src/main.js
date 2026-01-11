@@ -7,7 +7,7 @@ const resultEl = document.getElementById("greeting");
 
 submitEl.addEventListener('click' , (event) =>{
   event.preventDefault();
-  const inputName= inputEl.value;
+  const inputName = inputEl.value.replace(/[0-9]/g, ""); ;
   
    if (inputName === "") {
      alert("Please enter your name!");

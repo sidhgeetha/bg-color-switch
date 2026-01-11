@@ -9,6 +9,10 @@ submitEl.addEventListener('click' , (event) =>{
   event.preventDefault();
   const inputName= inputEl.value;
   
+   if (inputName === "") {
+     alert("Please enter your name!");
+     return;
+   }
 
   
   console.log(`🤖 Hello ${inputName} welcome to Cyberdude!`);

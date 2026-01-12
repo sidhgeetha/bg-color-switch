@@ -16,7 +16,7 @@
   </head>
   <body>
     <header
-      class="flex justify-between bg-indigo-950 text-white px-24 py-10 text-3xl font-bold ">
+      class="flex justify-between bg-slate-900  text-white px-24 py-10 text-3xl font-bold ">
       <div class="flex flex-row items-center gap-8">
        <h5 class="bg-gradient-to-r from-cyan-300 via-green-400 to-yellow-300
          bg-clip-text text-transparent">BG color-switch! </h5>
@@ -42,23 +42,28 @@
       </div>
     </header>
     <main  class="max-w-4xl py-24 mx-auto ">
+      <div class="max-w-4xl mx-auto p-8 
+            rounded-3xl 
+            bg-indigo-100/50 backdrop-blur-md shadow-indigo-800/50
+            shadow-lg  ">
 
       <div id="coloursDiv" class="flex flex-row justify-center gap-12">
         <div id="pink"
-          class=" w-24 h-24 rounded-full flex items-center justify-center text-center bg-pink-500 "></div>
+          class=" w-24 h-24 rounded-full flex items-center justify-center text-center  shadow-lg shadow-pink-500/50 bg-pink-500 "></div>
         <div id="cyan"
-          class=" w-24 h-24 rounded-full flex items-center justify-center text-center bg-cyan-400"></div>
+          class=" w-24 h-24 rounded-full flex items-center justify-center text-center  shadow-lg shadow-cyan-400/50 bg-cyan-400"></div>
         <div id="rose"
-          class="  w-24 h-24 rounded-full flex items-center justify-center text-center bg-rose-400"></div>
+          class="  w-24 h-24 rounded-full flex items-center justify-center text-center shadow-lg  shadow-rose-400/50 bg-rose-400"></div>
         <div id="blue"
-          class="  w-24 h-24 rounded-full flex items-center justify-center text-center bg-blue-500  " data-color="#3b82f6"></div>
+          class="  w-24 h-24 rounded-full flex items-center justify-center text-center shadow-lg shadow-blue-500/50 bg-blue-500  " data-color="#3b82f6"></div>
         <div id="green"
-          class=" w-24 h-24 rounded-full flex items-center justify-center text-center bg-green-400"></div>
+          class=" w-24 h-24 rounded-full flex items-center justify-center text-center  shadow-lg shadow-green-400/50 bg-green-400"></div>
 
 
            <div id="random"
-          class=" w-24 h-24 rounded-full flex items-center justify-center text-center bg-green-400 text-white font bold"> Random
+          class=" w-24 h-24 rounded-full flex items-center text-sm justify-center text-center bg-green-400 text-white font-extrabold"> Random
         </div>
+      </div>
       </div>
 
       

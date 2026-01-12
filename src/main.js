@@ -1,24 +1,43 @@
+const colourDivs = document.querySelectorAll("#coloursDiv div");
+document.body.backgroundColor = "ffffff";
 
-const inputEl = document.getElementById("inputName");
-
-const submitEl = document.getElementById("submit");
-
-const resultEl = document.getElementById("greeting");
-
-submitEl.addEventListener('click' , (event) =>{
-  event.preventDefault();
-  const inputName = inputEl.value.replace(/[0-9]/g, ""); ;
+// Loop divs
+colourDivs.forEach((div) => {
   
-   if (inputName === "") {
-     alert("Please enter your name!");
-     return;
-   }
+  const color = div.style.backgroundColor ;
 
-  
-  console.log(`🤖 Hello ${inputName} welcome to Cyberdude!`);
+  // Add click event
+  div.addEventListener("click", () => {
+   const color = window.getComputedStyle(div).backgroundColor;
+    document.body.style.backgroundColor = color;
+  });
+});
 
-  resultEl.innerText = `🤖 Hello ${inputName}, Welcome to CyberDude!`;
-  resultEl.classList.add("bg-green-400", "text-white", "p-4", "rounded-md" , "font-bold");
+
+// const colors = ["#f87171", "#60a5fa", "#34d399", "#fbbf24", "#a78bfa"];
+
+const randomBtnEl = document.getElementById("random");
+
+randomBtnEl.addEventListener("click", () => {
+  const color = "#" + Math.floor(Math.random() * 16777215).toString(16);
+  document.body.style.backgroundColor = color;
+});
+
+// dark theme 
+
+const toggleEl = document.getElementById("toggle");
+const moonEl =document.getElementById("moon");
+const sunEl = document.getElementById("sun");
+
+
+moonEl.addEventListener("click" ,() =>{
+  document.body.style.backgroundColor = "#111827";
+  document.body.style.color = "white";
+})
+
+sunEl.addEventListener("click" , () =>{
+  document.body.style.backgroundColor = "white";
+  document.body.style.color = "black";
 })
 
 
@@ -35,58 +54,20 @@ submitEl.addEventListener('click' , (event) =>{
 
 
 
+// const colors = ["#f87171", "#60a5fa", "#34d399", "#fbbf24", "#a78bfa"];
+// const container = document.getElementById("colorButtons");
+// document.body.style.backgroundColor = "#ffffff";
 
+// colors.forEach((color) => {
+//   const btn = document.createElement("button");
 
+//   btn.className = "w-10 h-10 rounded-full border";
+//   btn.style.backgroundColor = color;
 
+//   btn.addEventListener("click", () => {
+//     document.body.style.backgroundColor = color;
+//   });
 
+//   container.appendChild(btn);
+// });
 
-
-
-
-const empNameEl = document.getElementById("empName");
-const jobEl = document.getElementById("job");
-const myFormEl = document.getElementById("myForm");
-const empdataContainerEl = document.getElementById("empdataContainer");
-const empDataEl = document.getElementById("empdata");
-
-// Hide container
-empdataContainerEl.style.display = "none";
-
-//events
-myFormEl.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const empName = empNameEl.value;
-  const job = jobEl.value;
-
-  // check value
-
-  if (empName.length > 0 && job.length > 0) {
-    empdataContainerEl.style.display = "block";
-
-    const cardDiv = document.createElement("div");
-    cardDiv.classList.add("p-4", "text-left", "border", "rounded-lg");
-
-    if (job.toLowerCase() === "developer") {
-      cardDiv.classList.add("bg-green-500");
-    } else {
-      cardDiv.classList.add("bg-gray-200");
-    }
-    cardDiv.innerHTML = `
-
-<p class="font-semibold text-lg mb-2" >${empName} </p>
-<p class="font-semibold text-lg mb-2" >${job} </p>
-<button class="delete-btn bg-red-500 py-1 px-1 rounded " >Delete </button>
-
-`;
-
-    const deleteBtn = cardDiv.querySelector(".delete-btn");
-    deleteBtn.addEventListener("click", () => {
-      cardDiv.remove();
-    });
-
-    empDataEl.appendChild(cardDiv);
-    // Clear inputs
-    empNameEl.value = "";
-    jobEl.value = "";
-  }
-});
